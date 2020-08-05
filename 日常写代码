@@ -1,0 +1,171 @@
+乘法口诀表
+int main()
+{
+	int i = 0;
+	for (i = 1; i <= 9; i++)
+	{
+		int h = 1;
+		for (; h <=i; h++)
+		{
+			printf("%d*%d=%-2d ", i, h, i*h);
+
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+int main()
+{
+	int i = 0;
+	int arr1[] = { 10, -2, 3, 34, 11, 6, 7, 65, 9, 15 };
+	int a = arr1[i];
+	int b = sizeof(arr1) / sizeof(arr1[0])-1;
+	for (i=0;i<b;i++)
+	{
+		if(arr1[i] > a)
+		{
+		a = arr1[i];
+	}
+	}
+	printf("%d\n", a);
+	return 0;
+}
+
+int main()
+{
+	int i = 0;
+	double sum = 0;
+	int flag = 1;
+	for (i = 1; i <= 100; i++)
+	{
+		sum += flag*1.0 / i;
+		flag = -flag;
+	}
+	printf("%lf\n", sum);
+	
+	return 0;
+}
+
+优化后的算法
+int main()
+{
+	int a = 0;
+	int b = 0;
+	for (a = 101; a <= 200; a+=2)
+	{
+		for (b = 2; b <= sqrt(a); b++)
+		{
+			if (a%b == 0)
+			{
+				break;
+			}
+		}
+		if (b>sqrt(a))
+		{
+			printf("%d\n", a);
+		}
+	}
+	return 0;
+}
+
+试除法
+int main()
+{
+	int a = 0;
+	int b = 0;
+	for (a = 100; a <= 200; a++)
+	{
+		for (b = 2; b < a; b++)
+		{
+			if (a%b == 0)
+			{
+				break;
+			}
+		}
+		if (a == b)
+		{
+			printf("%d\n", a);
+		}
+	}
+	return 0;
+}
+int main()
+{
+	int a = 1000;
+	int b = 0;
+	for (a=1000;a<=2000; a++)
+	{
+		
+		if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0)
+		{
+			printf("%d\n", a);
+			b++;
+
+		}
+		
+			
+	}
+	printf("%d\n", b);
+	return 0;
+}
+
+（跑不动）
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int tmp = 0;
+	scanf("%d %d %d", &a, &b, &c);
+	if (a<b)
+	{
+		int tmp = a;
+		a = b;
+		b = tmp;
+		
+	}
+	
+	if (a<c)
+	{
+		int tmp = a;
+			a = c;
+			c = tmp;
+	}
+	
+	if (b<c)
+	{
+		int tmp = b;
+		b = c;
+		c = tmp;
+	}
+	printf("%d %d %d", &a &b &c);
+		return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#include <Windows.h>
+#include <stdlib.h>
+
+int main()
+{
+	int i = 0;
+	char password2[20] = { 0 };
+	char password1[20] = { 123456 };
+	for (i=0;i<3;i++)
+	{
+		printf("请输入密码:>");
+		scanf("%s", password2);
+		if (strcmp(password2, password1))
+		{
+			printf("密码正确\n");
+			break;
+		}
+		else
+			printf("密码错误\n");
+		if (i == 3)
+			printf("三次秘密错误，推出程序\n");
+
+	}
+	return 0;
