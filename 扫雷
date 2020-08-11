@@ -1,0 +1,166 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include "game.h"
+void resetboard(char board[lines][lists], int e, int t, char n)//重置棋盘
+{
+	int a = 0;
+	int b = 0;
+	for (a = 0; a < e; a++)
+	{
+		for (b = 0; b < t; b++)
+		{
+			board[a][b] = n;
+		}
+	}
+
+
+}
+void printboard(char board[lines][lists], int e, int t)//打印棋盘
+{
+	int a = 0;
+	int b = 0;
+	for (a= 0; a<= t; a++)
+	{
+		printf(" %d ", a);
+	}
+	printf("\n");
+	for (a = 1; a <= e; a++)
+	{
+		printf(" %d ", a);
+		for (b = 1; b <= t; b++)
+		{
+			printf(" %c ", board[a][b]);
+		}
+		printf("\n");
+	}
+}
+void put_in_bomb(char board[lines][lists], int e, int t,int z)//放雷
+{
+	int n = 0;
+	if (z == 1)
+		n = 15;
+	else if (z == 2)
+		n = 10;
+	else
+		n = 7;
+	for (; n > 0;)
+	{	
+		int a = rand() % e + 1;
+		int b = rand() % t + 1;
+		if (board[a][b] == '0')
+		{
+			board[a][b] = '1';
+			n--;
+		}
+	}
+	
+}
+void select_difficulty(int* n)//选择难度
+{
+	while (1)
+	{
+		printf("1.困难 2.普通 3.简单\n");
+		printf("请选择难度:>");
+		scanf("%d", &*n);
+		if (*n == 1 || *n == 2 || *n == 3)
+			break;
+		else
+			printf("输入错误，请重新输入\n");
+	}
+}
+int get_mine(char board1[lines][lists],int n,int m)//输出雷的个数
+{
+	return board1[n - 1][m - 1] +
+	       board1[n - 1][m] +
+	board1[n - 1][m + 1] +
+	board1[n][m - 1] +
+	board1[n][m + 1] +
+	board1[n + 1][m - 1] +
+	board1[n + 1][m] +
+	board1[n + 1][m + 1] -
+	8 * '0' ;
+
+	
+}
+void check_bomb(char board1[lines][lists], char board2[lines][lists],int e, int t)//排雷
+{
+	int n = 0;
+	int m = 0;
+	int i = 0;
+	int ret = 0;
+	do
+   {
+		printf("请输入坐标排雷：");
+		scanf("%d %d", &n, &m);
+		if (n >= 1 && n <= e && m >= 1 && m <= t)
+		{
+
+			if (board1[n][m] == '1')
+			{
+				printf("你被炸死了，游戏结束\n");
+				printboard(board1, line, list);
+				break;
+			}
+			else
+			{
+				ret = get_mine(board1, n, m);
+				board2[n][m] = ret + '0';
+				printboard(board2, line, list);
+				printf("继续\n");
+			}
+		}
+		else
+			printf("输入坐标非法，请重新输入\n");
+	} while (1);
+#define _CRT_SECURE_NO_WARNINGS 1
+#include "game.h"
+void mean()
+{
+	printf("#################################\n");
+	printf("########### 1.进入游戏 ##########\n");
+	printf("########### 0.退出游戏 ##########\n");
+	printf("#################################\n");
+}
+void game()
+{
+	int x = 0;
+	char board1[lines][lists] = { '0' };
+	char board2[lines][lists] = { '0' };
+	resetboard(board1, lines, lists, '0');//重置棋盘
+	resetboard(board2, lines, lists, '*');//重置棋盘
+	//printboard(board1, line, list);//打印棋盘1
+	/*printf("\n");*/
+	select_difficulty(&x);//选择难度
+	printboard(board2, line, list);//打印棋盘2
+	put_in_bomb(board1, line, list,x);//放雷
+	//printboard(board1, line, list);//打印棋盘1
+	check_bomb(board1,board2,line,list);//排雷
+}
+void test()
+{
+	int n = 0;
+	do
+	{
+		mean();
+		printf("请输入:>");
+		scanf("%d", &n);
+		switch (n)
+		{
+		case 1:
+			printf("开始扫雷游戏\n");
+			game();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("输入错误，请重新输入\n");
+		}
+		
+	} while (n);
+}
+int main()
+{
+	srand((unsigned int)time(NULL));
+	test();
+	return 0;
+}
