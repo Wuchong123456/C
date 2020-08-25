@@ -1,0 +1,48 @@
+//int Add(int x, int y)
+//{
+//
+//}
+//int main()
+//{
+//	int* arr[10] ;//指针数组
+//	int* (*p)[10]=&arr;//数组指针
+//
+//	int(*pAdd)(int, int) = Add;//函数指针
+//	int sum = pAdd(1, 2);
+//	int(*pArr[10])(int, int);//函数指针数组
+//	int(*(*parr)[5])(int, int);//指向函数指针数组的指针
+//
+//}
+void Rank(int arr[], int a)
+{
+	int i = 0;
+	for (i = 0; i < a-1; i++)
+	{
+		int trp = 0;
+		int n = 0;
+		for (n = 0; n < a-1; n++)
+		{
+			if (arr[n] > arr[n + 1])
+			{
+				trp = arr[n+1];
+				arr[n+1] = arr[n];
+				arr[n] = trp;
+			}
+		}
+	}
+
+}
+
+int main()
+{
+	int arr[10] = { 9, 7, 8, 4, 5, 6, 3, 2, 0, 1 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	printf("%d\n", sz);
+    Rank(arr,sz);
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
