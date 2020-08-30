@@ -1,0 +1,96 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//#include <stdio.h>
+//#include <string.h>
+//#include <windows.h>
+//int* arr()
+//{
+//	int x = 100;
+//	return &x;
+//}
+//int main()
+//{
+//	int* p = NULL;
+//	int a = 0;
+//	p = arr();
+//	Sleep(2000);
+//	a++;
+//	printf("%d\n", *p);
+//	printf("%d\n", *p);
+//	printf("%d\n", *&a);
+//	printf("%d\n", *p);
+//	return 0;
+//}
+//int main()
+//{
+//	int a, b, c;
+//	/*c = a + b;*/
+//	scanf("%d", &a);
+//	return 0;
+//}
+//void reverse(char* str)
+//{
+//	int i = 0;
+//	int a = strlen(str);
+//	for (i = 0; i < a - i - 1; i++)
+//	{
+//		char cat = str[i];
+//		str[i] = str[a - 1 - i];
+//		str[a - 1 - i] = cat;
+//	}
+//
+//} 
+//int main()
+//{
+//	char arr[20] = { 0 };
+//	/*scanf("%s", arr);*/
+//	gets(arr);
+//	reverse(arr);
+//	printf("%s", arr);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d %d", &a, &b);
+//	int sum = 0;
+//	int i = 0;
+//	int ret = 0;
+//	for (i = 0; i < b; i++)
+//	{
+//		ret = ret * 10 + a;
+//			sum = sum + ret;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//	int i = 0;
+//	int a = 0;
+//	
+//	for (i = 0; i <= 100000; i++)
+//	{
+//		int b = 1;
+//		int sum = 0;
+//		a = i;
+//		while (a /= 10)
+//		{
+//			b++;
+//		}
+//		a = i;
+//		while (a)
+//		{
+//			sum += (int)pow(a % 10,b);
+//			a /= 10;
+//		}
+//		if (sum == i)
+//		{
+//			printf("%d ", i);
+//		}
+//
+//	}
+//	return 0;
+//}
