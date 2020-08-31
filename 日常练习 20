@@ -1,0 +1,74 @@
+
+//#include <stdio.h>//奇数偶数排序
+//void swop(int sty[], int n)
+//{
+//	int left = 0;
+//	int right = n - 1;
+//	int i = 0;
+//
+//	while ( left < right)
+//	{
+//		while (left < right && sty[left] % 2 == 1)
+//		{
+//			left++;
+//		}
+//		while (left < right && sty[right] % 2 == 0)
+//		{
+//			right--;
+//		}
+//		i = sty[left];
+//		sty[left] = sty[right];
+//		sty[right] = i;
+//
+//
+//	}
+//	
+//	
+//}
+//void print(int sty[], int n)
+//{
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		printf("%d ", sty[i]);
+//	}
+//	printf("\n");
+//}
+//int main()
+//{
+//	int arr[10] = { 1,3,5,7,9 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	swop(arr, sz);
+//	print(arr, sz);
+//	return 0;
+//}
+#include <stdio.h>//杨辉三角
+int main()
+{
+	int arr[10][10] = { 0 };
+	int a = 0;
+	int b = 0;
+	for (a = 0; a < 10; a++)
+	{
+		for (b = 0; b < 10; b++)
+		{
+			if (b == 0 || a == b)
+			{
+				arr[a][b] = 1;
+			}
+			if (a >= 2)
+			{
+				arr[a][b] = arr[a - 1][b] + arr[a - 1][b - 1];
+			}
+		}
+	}
+	for (a = 0; a < 10; a++)
+	{
+		for (b = 0; b <= a; b++)
+		{
+			printf("%d ", arr[a][b]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
