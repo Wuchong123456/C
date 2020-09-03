@@ -1,0 +1,91 @@
+//#include <stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	int a = 0;
+//	int j = 0;
+//	char ch = 'A';
+//	for (i = 0; i < 5; i++)//打印五行
+//	{
+//		for (a = 0; a <(4-i); a++)//打印每行空格
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j <= i; j++)//打印A到中心字符
+//		{
+//			printf("%c", ch);
+//			ch++;
+//		}
+//		int b = 0;
+//		for (j = 0; j <=i; j++)//打印中心字符到A
+//		{
+//			ch--;
+//			if (b > 0)
+//			{
+//				printf("%c", ch);
+//			}
+//			b++;
+//			
+//		}
+//		printf("\n");//换行
+//		
+//	}
+//	return 0;
+//}
+#include <assert.h>
+#include <stdio.h>
+#include <Windows.h>
+//int my_strlen(char* sty)//我的strlen
+//{
+//	assert(sty);
+//	int i = 0;
+//	while (*(sty++) != '\0')
+//	{
+//		i++;
+//	}
+//		return i;
+//}
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	int len = my_strlen(arr);
+//	printf("%d ", len);
+//	return 0;
+//}
+//char* my_strcyp(char* sty,const char* day)//我的strcyp
+//{
+//	assert(sty && day);
+//	char* tem = sty;
+//	while (*sty++ = *day++);
+//
+//		return tem;
+//}
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	char ch[] = "bit";
+//	my_strcyp(arr, ch);
+//	printf("%s", arr);
+//	return 0;
+//}
+//char* my_strcat(char* src, const char* dest)//我的strcat
+//{
+//	assert(src && dest);
+//	char* tem = src;
+//	while (*src != '\0')
+//	{
+//		src++;
+//	}
+//	printf("%p\n", src);
+//	while (*src++ = *dest++);
+//	return tem;
+//}
+//int main()
+//{
+//	char arr1[12] = "abcdef";
+//	char arr2[] = "bit";
+//	
+//	printf("%s ", my_strcat(arr1, arr2));
+//	system("pause");
+//	return 0;
+//}
