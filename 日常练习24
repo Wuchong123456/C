@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <assert.h>
+#include <string.h>
+int my_strcmp(const char* scr, const char* dest)
+{
+	assert(scr && dest);
+	while (*scr == *dest)
+	{
+		if (*scr =='/0')
+		{
+			return 0;
+		}
+		scr++;
+		dest++;
+	}
+	if(*scr < *dest)
+		return -1;
+	else 
+		return 1;
+}
+int main()
+{
+	char arr1[10] = "abcdefg";
+	char arr2[5] = "abcd";
+	int put = my_strcmp(arr1, arr2);
+	printf("%d\n", put);
+	return 0;
+}
