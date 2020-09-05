@@ -1,0 +1,59 @@
+#include <assert.h>
+#include <stdio.h>
+char* my_strstr(const char* scr1, const char* scr2)//我的strstr
+{
+	assert(scr1 && scr2);
+	char* s1 =(char*) scr1;
+	char* s2 =(char*) scr2;
+	char* P = (char*) scr1;
+	if (*s2 == '\0')
+	{
+		return NULL;
+	}
+	while (*P)
+	{
+		
+			s1 = P;
+			s2 = (char*)scr2;
+			while (*s1 == *s2 && *s2 !='\0')
+			{
+
+				s1++;
+				s2++;
+				if (*s1 == '/0')
+				{
+					return NULL;
+				}
+			}
+			if (*s2 == '\0')
+			{
+				return P;
+			}
+		P++;
+	}
+	return NULL;
+}
+
+int main()
+{
+	char arr1[15] = "bcbccbbcbb";
+	char arr2[5] = "bbc";
+	char* put = my_strstr(arr1, arr2);
+	printf("%s ", put);
+	return 0;
+}
+#include <stdio.h>
+#include <string.h>
+int main()//strtok函数的使用
+{
+	char arr[] = "123@234.@234";
+	char* p = "@.";
+	char buf[1024] = { 0 };
+	strcpy(buf, arr);
+	char* ret = NULL;
+	for (ret = strtok(arr, p); ret != NULL; ret = strtok(NULL, p))
+	{
+		printf("%s\n", ret);
+	}
+	return 0;
+}
