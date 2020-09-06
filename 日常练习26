@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
+struct s
+{
+	char name[20];
+	int age;
+};
+//int main()
+//{
+//	struct s arr1[] = { { "张三", 20 }, { "李四", 30 } };
+//	struct s arr2[3] = { 0 };
+//	int sz = sizeof(arr1) / sizeof(arr1[0]);
+//	memcpy(arr2, arr1, sizeof(arr1));
+//	printf("%d", sz);
+//	return 0;
+//}
+//void* my_memcpy(void* dest, const void* src, int n)
+//{
+//	assert(src && dest);
+//	void* tem = dest;
+//	while (n--)
+//	{
+//		*(char*)dest = *(char*)src;
+//		++(char*)scr;
+//		++(char*)dest;
+//	}
+//	return tem;
+//}
+//int main()
+//{
+//	struct s arr1[] = { { "张三", 20 },{ "李四", 30 } };
+//	struct s arr2[3] = { 0 };
+//	my_memcpy(arr2, arr1, sizeof(arr1));
+//	return 0;
+//
+//}
+void* my_memmove(void* dest, void* src, int n)
+{
+	assert(src && dest);
+	void* tem = dest;
+	if (src<dest)
+	{
+		while (n--)
+		{
+			(char*)dest = ((char*)dest + n);
+
+		}
+		
+	}
+}
+int main()
+{
+	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int i = 0;
+	my_memmove(arr + 2, arr, 20);
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d", arr[i]);
+	}
+	return 0;
+}
+//int main()
+//{
+//	char ch = 'A';
+//	return 0;
+//}
