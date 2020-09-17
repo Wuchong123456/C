@@ -1,0 +1,65 @@
+//
+//struct S
+//{
+//	int a : 2;
+//	int b : 5;
+//	int c : 10;
+//	int d : 30;
+//};
+//int main()
+//{
+//	struct S s;
+//	printf("%d\n", sizeof(s));
+//	return 0;
+//}
+//struct S
+//{
+//	char a : 3;
+//	char b : 4;
+//	char c : 5;
+//	char d : 4;
+//};
+//int main()
+//{
+//	struct S s = { 0 };
+//	s.a = 10;
+//	s.b = 20;
+//	s.c = 3;
+//	s.d = 4;
+//	return 0;
+//}
+//#define MAX 10
+//int main()
+//{
+//	int arr[MAX] = { 0 };
+//	return 0;
+//}
+//#include <stdio.h>
+//enum Color
+//{
+//	RED = 2,
+//	GREEN,
+//	BLUE
+//};
+//int main()
+//{
+//
+//	enum Colosr c = BLUE;
+//	printf("%d %d %d\n", RED, GREEN, BLUE);
+//	return 0;
+//}
+#include <stdio.h>
+union Un
+{
+	char c;
+	int i;
+};
+int main()
+{
+	union Un u = { 0 };
+	printf("%d\n", sizeof(u));
+	printf("%p\n", u.c);
+	printf("%p\n", u.i);
+	printf("%p\n", u);
+	return 0;
+}
