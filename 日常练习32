@@ -1,0 +1,41 @@
+
+//# include <stdio.h>
+//# include <stdlib.h>
+//void Decuple(int *i);  
+//int main(void)
+//{
+//	int *p = malloc(4);
+//	*p = 10;
+//	Decuple(p);
+//	printf("*p = %d\n", *p);
+//	return 0;
+//}
+//void Decuple(int *i)
+//{
+//	*i = (*i) * 10;
+//	return;
+//}
+//# include <stdio.h>
+//# include <stdlib.h>
+//int main(void)
+//{
+//	int *p = malloc(sizeof*p);
+//	*p = 10;
+//	printf("p = %p\n", p);
+//	free(p);
+//	printf("p = %p\n", p);
+//	return 0;
+//}
+# include <stdio.h>
+# include <stdlib.h>
+int main(void)
+{
+	int *p = malloc(sizeof*p);
+	*p = 10;
+	printf("p = %p\n", p);
+	printf("*p = %d\n", *p);
+	free(p);
+	printf("p = %p\n", p);
+	printf("*p = %d\n", *p);
+	return 0;
+}
