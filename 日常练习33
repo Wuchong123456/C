@@ -1,0 +1,47 @@
+
+#include <stdlib.h>
+//int* test()
+//{
+//	int* p = (int*)malloc(40);
+//	return p;
+//}
+//int main()
+//{
+//	int *p = test();
+//	return 0;
+//}
+//void GetMemory(char **p, int num)
+//{
+//	*p = (char*)malloc(num);
+//}
+//void Test(void)
+//{
+//	char* str = NULL;
+//	GetMemory(&str, 100);
+//	strcpy(str, "hello");
+//	printf(str);
+//	free(str);
+//	str = NULL;
+//}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+//void Test(void)
+//{
+//	char *str = (char*)malloc(100);
+//	strcpy(str, "hello");
+//	free(str);
+//	str = NULL;
+//	if (str != NULL)
+//	{
+//		strcpy(str, "world");
+//		printf(str);
+//	}
+//}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
