@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<malloc.h>
+typedef struct _SoftArray{
+int len;
+int array[];
+}SoftArray;
+int main()
+{
+    int len=10,i=0;
+    
+    SoftArray *p=(SoftArray*)malloc(sizeof(SoftArray)+sizeof(int)*len);
+    p->len=len;
+    
+    for(i=0;i<p->len;i++)
+   {
+        p->array[i]=i+1;
+    }
+    for(i=0;i<p->len;i++)
+   {  
+        printf("%d\n",p->array[i]);
+    }
+
+    free(p);
+
+    return 0;
+} 
+#include<stdio.h>
+#include<malloc.h>
+
+typedef struct _SoftArray{
+    int len;
+    int array[];
+}SoftArray;
+
+int main()
+{
+    int len = 10;
+
+    SoftArray *p=(SoftArray*)malloc(sizeof(SoftArray) + sizeof(int)*len);
+    printf("After the malloc function the struct's size is %d\n”,sizeof(SoftArray));
+
+    return 0;
+}
+ypedef struct st_type
+{
+int i;
+int *p_a;
+}type_a;
+
+type_a *p=(type_a *)malloc(sizeof(type_a));
+p->i=100;
+p->p_a=(int *)malloc(p->i*sizeof(int));
+for(i=0;i<100;i++)
+{
+p->p_a[i]=i;
+}
+
+free(p->p_a);
+p->p_a=NULL;
+
+free(p);
+p=NULL;
