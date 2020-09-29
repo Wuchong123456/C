@@ -32,7 +32,7 @@ int main()
 		case 4:
 			break;
 		case 5:
-			showcontact(&con);//打印
+			showcontact(&con);//打印通讯录
 			break;
 		case 0:
 			printf("退出通讯录\n");
