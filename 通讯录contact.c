@@ -16,7 +16,7 @@ void addcontact(struct contact* pa)
 	{
 		printf("请输入姓名:>");
 		scanf("%s", pa->data[pa->size].name);
-		printf("请输入年纪:>");
+		printf("请输入年龄:>");
 		scanf("%d", &(pa->data[pa->size].age));
 		printf("请输入性别:>");
 		scanf("%s", pa->data[pa->size].sex);
