@@ -1,0 +1,40 @@
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "w");
+//	if (pf == NULL)
+//	{
+//		printf("%s\n",strerror(errno));
+//		return 0;
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+//int main()
+//{
+//	FILE* pfread = fopen("test.txt", "r");
+//	if (pfread == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	/*fputc('b', pfWrite);
+//	fputc('i', pfWrite);
+//	fputc('t', pfWrite);*/
+//	printf("%c", fgetc(pfread));
+//	printf("%c", fgetc(pfread));
+//	printf("%c", fgetc(pfread));
+//	fclose(pfread);
+//	pfread = NULL;
+//	return 0;
+//}
+int main()
+{
+	int ch = fgetc(stdin);
+	fputc(ch, stdout);
+	return 0;
+}
