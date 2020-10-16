@@ -16,7 +16,7 @@ struct peoinfo
 };
 struct contact
 {
-	struct peoinfo data[MAX];
+	struct peoinfo *data;
 	int size;
 };
 void initcontact(struct contact* ps);
