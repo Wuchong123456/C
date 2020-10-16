@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#define MAX 1000
+//#define MAX 1000
 #define MAX_name 10
 #define MAX_sex 3
 #define MAX_tele 15
